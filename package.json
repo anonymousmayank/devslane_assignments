@@ -1,0 +1,26 @@
+{
+  "name": "devslane_assignments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anonymousmayank/devslane_assignments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anonymousmayank/devslane_assignments/issues"
+  },
+  "homepage": "https://github.com/anonymousmayank/devslane_assignments#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.4",
+    "tailwindcss": "^2.1.4",
+    "vite": "^2.3.7"
+  }
+}
