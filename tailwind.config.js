@@ -10,14 +10,16 @@ module.exports = {
           500:'#008248'
         },
         secondry:'#1E3932',
-        golden:'#cba258'
+        golden:'#cba258',
+        accent:'#f3f1e7'
       },
       height:{
         '2xl':'36rem',
         '3xl':'40rem'
       },
       inset:{
-        '25':'6.625rem'
+        '25':'6.625rem',
+        '68':'17rem'
       },
       backgroundImage: theme => ({
         'star': "url('/images/star.png')",
@@ -26,10 +28,24 @@ module.exports = {
        backgroundPosition: {
         '1/2':'50%',
        },
+       boxShadow: {
+         t:'0px -3px 6px -3px rgb(0 0 0 / 25%)',
+         '2xl':'0 0 20px rgb(0 0 0 / 25%)'
+       },
+       borderWidth: {
+         '10':'10px'
+       },
+       transitionProperty: {
+        'border': 'border-width, margin',
+       }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ['hover'],
+      margin: ['hover'],
+      
+    },
   },
   plugins: [],
 }
