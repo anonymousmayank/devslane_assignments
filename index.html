@@ -694,7 +694,7 @@
 
     </div>
     <script>
-        function openContainer(evt, tab) {
+        function openContainer(evt, tab) { //for tabs section
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabContent");
             console.log(tabcontent.length);
@@ -715,7 +715,7 @@
             evt.currentTarget.childNodes[3].className = evt.currentTarget.childNodes[3].className.replace(" hidden", "");
         }
 
-        function openFooterContainer(evt) {
+        function openFooterContainer(evt) { //for footer dropdowns
             if (window.innerWidth < 1024) {
                 cName = evt.currentTarget.nextElementSibling.className;
                 icon = evt.currentTarget.childNodes[3].className['baseVal'];
@@ -723,17 +723,25 @@
                 l = cName.length;
                 if (cName.includes(' hidden')) {
                     evt.currentTarget.nextElementSibling.className = cName.replace(' hidden', ' flex');
-                    // evt.currentTarget.childNodes[3].className['baseVal']=icon.replace(' -rotate-180',' rotate-180')
+                    evt.currentTarget.childNodes[3].className['baseVal']=icon+' transform rotate-180';
+                    if(!icon.includes(' transform rotate-180')){
+                        console.log('Does not have rotation');
+                        
+                        console.log('Rotate-180 added : '+evt.currentTarget.childNodes[3].className['baseVal']);
+                    }
+                    // else if(icon.includes(' transform -rotate-180')){
+                    //     console.log('Contains -Rotate-180')
+                    //     evt.currentTarget.childNodes[3].className['baseVal']=icon.replace(' transform -rotate-180',' transform rotate-180')
+                    //     console.log('-Rotate-180 changed : '+evt.currentTarget.childNodes[3].className['baseVal']);
+                    // }
                 }
                 else {
                     cName = cName.substr(0, l - 4) + 'hidden';
                     evt.currentTarget.nextElementSibling.className = cName;
-                    // if(!icon.includes('rotate-180')){
-                    //     evt.currentTarget.childNodes[3].className['baseVal']=icon+' rotate-180';
-                    // }
-                    // evt.currentTarget.childNodes[3].className['baseVal']=icon.replace(' rotate-180',' -rotate-180');
+                    
+                    evt.currentTarget.childNodes[3].className['baseVal']=icon.replace(' transform rotate-180',' ');
+                    console.log(evt.currentTarget.childNodes[3].className['baseVal'])
                 }
-                console.log(evt.currentTarget.childNodes[3].className['baseVal']);
             }
 
         }
